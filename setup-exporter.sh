@@ -33,6 +33,7 @@ cp monit_exporter /usr/local/go/bin/
 echo "Install systemd service? (Y/n)"
 read -r systemd
 if [[  "$systemd" == "y" ]]; then
+  touch /var/log/monit_exporter.log
   cp monit_exporter.service /etc/systemd/system/
   systemctl enable monit_exporter --now
 fi

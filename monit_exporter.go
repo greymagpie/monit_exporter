@@ -206,7 +206,7 @@ func main() {
 	prometheus.MustRegister(exporter)
 
 	log.Printf("Starting monit_exporter: %s", config.listen_address)
-	http.Handle(config.metrics_path, prometheus.Handler())
+	http.Handle(config.metrics_path, promhttp.Handler())
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(`<html>
             <head><title>Monit Exporter</title></head>

@@ -4,6 +4,7 @@ After=network.target
 
 [Service]
 User=root
+WorkingDirectory=/usr/local/go/bin
 ExecStart=/usr/local/go/bin/monit_exporter
 StandardOutput=file:/var/log/monit_exporter.log
 StandardError=file:/var/log/monit_exporter.log

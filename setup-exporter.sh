@@ -1,3 +1,7 @@
+#TODO #12 
+#Workaround
+cp config.toml /usr/local/go/bin/
+
 #!/bin/bash
 
 if [ "$EUID" -ne 0 ]
@@ -29,7 +33,6 @@ echo "$goProxy go get github.com/spf13/viper" | bash
 echo "$goProxy go get golang.org/x/net/html/charset" | bash
 go build
 cp monit_exporter /usr/local/go/bin/
-
 
 echo "Install systemd file & service check? (Y/n)"
 read -r systemd

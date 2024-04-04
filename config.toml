@@ -1,0 +1,3 @@
+listen_address = "0.0.0.0:8081"
+monit_user = "admin"
+monit_password = "monit"

@@ -7,10 +7,10 @@ fi
 
 echo "Set http/s_proxy? (e.g. http://ip:port)"
 read -r proxy
-if [[ "$proxy" == *"http://"* ]]; then
+if [[ $proxy == "http://"* ]]; then
     export http_proxy=$proxy
     export https_proxy=$proxy
-    goProxy = "https_proxy=$proxy"
+    goProxy="https_proxy=$proxy"
 fi
 
 echo "Install golang 1.21.6? (Y/n)"
@@ -21,6 +21,7 @@ if [[ "$golang" == "y" ]]; then
 fi
 
 go mod init monit_exporter
+go mod tidy
 echo "$goProxy go get github.com/prometheus/client_golang/prometheus/" | bash
 echo "$goProxy go get github.com/prometheus/log" | bash
 echo "$goProxy go get github.com/prometheus/client_golang/prometheus/promhttp" | bash

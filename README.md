@@ -20,5 +20,5 @@ Parameter | Description | Default
 `metrics_path` | relative path to expose metrics | /metrics
 `ignore_ssl` | whether of not to ignore ssl errors | false
 `monit_scrape_uri` | uri to get monit status | http://localhost:2812/_status?format=xml&level=full
-`monit_user` | user for monit basic auth, if needed | none
+`monit_user` | user name for monit basic auth, if needed | none
 `monit_password` | password for monit status, if needed | none
